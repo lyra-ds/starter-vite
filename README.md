@@ -10,10 +10,13 @@ live white-label branding, and ready-to-go lint, test, and CI setup.
 Click **Use this template** on GitHub, or:
 
 ```sh
-npx degit lyra-ds/starter-vite my-app
+npx tiged lyra-ds/starter-vite my-app
 ```
 
-Plain cloning works too. Then:
+`create-vite` only scaffolds its own built-in templates, so community
+templates like this one are cloned with [tiged](https://github.com/tiged/tiged)
+— it's what the [Vite guide](https://vite.dev/guide/#community-templates)
+recommends. Plain cloning works too. Then:
 
 ```sh
 pnpm install
