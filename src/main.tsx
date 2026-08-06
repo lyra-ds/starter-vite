@@ -8,6 +8,7 @@ import '@fontsource/plus-jakarta-sans/700.css'
 import '@fontsource/jetbrains-mono/400.css'
 import { ThemeProvider } from '@lyra-ds/react'
 import App from './App'
+import './globals.css'
 import './brand.css'
 
 createRoot(document.getElementById('root')!).render(

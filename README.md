@@ -1,27 +1,75 @@
-# Lyra DS Vite starter
+# Lyra DS Vite template
 
-A minimal Vite + React starter for [Lyra Design System](https://lyra-ds.dev).
-It imports the public Lyra styles and React packages, loads the required local
-fonts, and demonstrates theme selection plus live white-label branding.
+A minimal [Vite](https://vite.dev) + React template for
+[Lyra Design System](https://lyra-ds.dev). It ships the public Lyra styles
+and React packages, local fonts, theme selection (light / dark / system),
+live white-label branding, and ready-to-go lint, test, and CI setup.
 
-## Quickstart
+## Create your project
 
-Clone the repository, then install and run the starter:
+Click **Use this template** on GitHub, or:
+
+```sh
+npx degit lyra-ds/starter-vite my-app
+```
+
+Plain cloning works too. Then:
 
 ```sh
 pnpm install
 pnpm dev
 ```
 
-`npm install` / `npm run dev` and `yarn` / `yarn dev` work too.
+`npm` and `yarn` work as well.
 
-## What it shows
+## After cloning
 
-- `@lyra-ds/styles` loaded once at the application entry.
-- `ThemeProvider` and `useTheme` for light, dark, and system preferences.
-- A small settings composition built with Lyra React components.
-- Live rebranding with only `--brand`, `--brand-contrast`, `--brand-radius`,
-  and `--brand-font`.
+- [ ] Rename `name` in `package.json`.
+- [ ] Edit the `<title>` and `<meta name="description">` in `index.html`.
+- [ ] Replace the example brands in `src/brand.css` with your own.
+- [ ] Swap `public/favicon.svg` for your favicon.
+- [ ] When you start building, delete `src/components/starter-home.tsx` (and
+      its test) and replace `src/App.tsx`.
+
+## White-label branding
+
+Lyra rebrands with only four CSS variables — everything else derives from
+them:
+
+```css
+[data-brand='acme'] {
+  --brand: #176b87;
+  --brand-contrast: #ffffff;
+  --brand-radius: 0.75rem;
+  --brand-font: 'Plus Jakarta Sans', sans-serif;
+}
+```
+
+See `src/brand.css` for the two example brands the demo switches between.
+The demo's "Lyra" option is the baseline look: it removes `data-brand`
+entirely — never set the attribute without defining `--brand`, or the
+derived accent group resolves to nothing.
+
+## Scripts
+
+| Script              | What it does                  |
+| ------------------- | ----------------------------- |
+| `pnpm dev`          | Start the dev server          |
+| `pnpm build`        | Type-check + production build |
+| `pnpm preview`      | Preview the production build  |
+| `pnpm test`         | Run tests (Vitest + jsdom)    |
+| `pnpm lint`         | ESLint (typescript-eslint)    |
+| `pnpm format`       | Prettier write                |
+| `pnpm format:check` | Prettier check (used in CI)   |
+
+CI runs lint, format check, tests, and build on every push and PR.
+
+## AI agents
+
+The template ships an [`AGENTS.md`](./AGENTS.md) that points AI coding
+agents at the Lyra DS docs, the machine-readable component contracts
+([llms.txt](https://lyra-ds.dev/llms.txt)), and this project's commands and
+conventions. Keep it updated as your project evolves.
 
 ## Links
 
