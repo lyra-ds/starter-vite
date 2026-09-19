@@ -1,2 +1,5 @@
 allowBuilds:
   esbuild: true
+# First-party Lyra packages are excluded from the release-age policy, matching starter-next.
+minimumReleaseAgeExclude:
+  - '@lyra-ds/*'
